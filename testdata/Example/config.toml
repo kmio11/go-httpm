@@ -1,0 +1,31 @@
+[default]
+type = "pass"
+
+[[rules]]
+[rules.condition]
+method = ["GET"]
+url = "https://example.com/*"
+
+[rules.action]
+type = "mock"
+response_file = "responses/get.txt"
+
+[[rules]]
+[rules.condition]
+method = ["POST", "PUT"]
+url = "https://example.com/submit"
+
+[rules.action]
+type = "mock"
+response = """
+HTTP/1.1 200 OK
+
+This is a mock response for https://example.com/submit"""
+
+[[rules]]
+[rules.condition]
+method = ["*"]
+url = "https://example.com/panic"
+
+[rules.action]
+type = "panic"

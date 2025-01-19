@@ -1,0 +1,14 @@
+[[rules]]
+  [rules.condition]
+    method = ["GET"]
+    url = "http://example.com/0"
+  [rules.action]
+    type = "mock"
+    response = "HTTP/1.1 200 OK\r\nContent-Length: 8\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 19 Jan 2025 04:20:09 GMT\r\n\r\nHello, 0"
+[[rules]]
+  [rules.condition]
+    method = ["PUT"]
+    url = "http://example.com/1"
+  [rules.action]
+    type = "mock"
+    response = "HTTP/1.1 200 OK\r\nContent-Length: 8\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 19 Jan 2025 04:20:09 GMT\r\n\r\nHello, 1"
